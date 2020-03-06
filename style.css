@@ -3,50 +3,173 @@
     padding: 0;
 }
 
+html {
+    font-family: arial;
+    font-size: 10px;
+}
 
 .lions {
     width: 100%;
     height: 100vh;
+    overflow: hidden;
     position: relative;
     background-color: #CCC;
-    overflow: hidden;
-    background-image: none;
-
 }
+
 
 .lions img.color {
     position: absolute;
-    bottom: -3%;
-    right: 5%;
-    height: 50%;
+    bottom: -2%;
+    right: -10%;
+    height: 36%;
     z-index: 1;
-
+    animation: color 4s linear infinite;
 }
 
 .lions img.colorless {
     position: absolute;
-    left: -12%;
-    height: 118%;
-    bottom: -6%;
-    opacity: 1;
+    bottom: 0;
+    left: -70%;
+    height: 110%;
+    opacity: 0.2;
+    animation: gray 4s linear infinite;
 }
 
-/* 
+.lions .titles {
+    left: 0;
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    animation: text 4s linear infinite;
+}
+
+.titles h1 {
+    font-size: 4rem;
+}
+
+.titles h2 {
+    font-size: 2.6rem;
+}
+
 @media (orientation: landscape) {
     .lions img.color {
 
-        left: -12%;
-        height: 118%;
-        bottom: -6%;
+        bottom: -3%;
+        right: 3%;
+        height: 56%;
 
     }
 
     .lions img.colorless {
-        bottom: -3%;
-        right: -10%;
-        height: 36%;
+        left: -15%;
+        height: 130%;
+        bottom: -10%;
 
     }
 
+    .lions .titles {
+        width: 60%;
+        left: auto;
 
-} */
+        right: 0;
+
+    }
+}
+
+@media(min-width: 1025px) {
+    .titles h2 {
+        font-size: 4rem;
+    }
+
+    .titles h1 {
+        font-size: 6rem;
+    }
+}
+
+@keyframes color {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 0;
+    }
+
+    13% {
+        opacity: 1;
+    }
+
+    87% {
+        opacity: 1;
+    }
+
+    92% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-5%);
+        opacity: 0;
+    }
+}
+
+@keyframes gray {
+    0% {
+        transform: translateX(0) scale(1);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 0;
+    }
+
+    13% {
+        opacity: 0.2;
+    }
+
+    87% {
+        opacity: 0.2;
+    }
+
+    92% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-5%) scale(1.1);
+        opacity: 0;
+    }
+
+}
+
+@keyframes text {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    13% {
+        opacity: 1;
+    }
+
+    87% {
+        opacity: 1;
+    }
+
+    92% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
